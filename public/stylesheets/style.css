@@ -57,3 +57,7 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+#divFoto {
+  width: 8%;
+}

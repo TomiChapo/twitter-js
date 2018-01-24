@@ -2,12 +2,14 @@ const _ = require('lodash');
 var data = []
 
 function add (name, content) {
-  data.push({ name: name, content: content });
+	add.id = add.id + 1 
+  data.unshift({ name: name, content: content, id: add.id });
 }
 
-add('Tomi', 'me gusta la merca');
-add('Tomi', 'dasdsadsa');
+add('Tomi', 'Me gusta la falopa')
 
+
+add.id = 0
 
 function list () {
   return _.cloneDeep(data);
@@ -31,9 +33,10 @@ const getFakeTweet = function() {
   return "Fullstack Academy is " + randArrayEl(awesome_adj) + "! The instructors are just so " + randArrayEl(awesome_adj) + ". #fullstacklove #codedreams";
 };
 for (let i = 0; i < 10; i++) {
-  module.exports.add( getFakeName(), getFakeTweet() );
+  module.exports.add( getFakeName(), getFakeTweet());
 }
+
 
 console.log(data);
 
-console.log(find({name: 'Tomi'}))
+console.log(find({id: 3}))
